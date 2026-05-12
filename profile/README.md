@@ -14,7 +14,7 @@ Our hardware topology is anchored by macOS-first execution on MacBook Pro M4 sys
 
 ## The Intelligence Cabinet
 
-Vidoxlabs operates a cabinet of core AI personas and autonomous agents: Violet, Zinnia, Xylia, Wisteria, and Yarrow. Yarrow is referenced with female pronouns across operational documentation.
+Vidoxlabs operates a cabinet of core AI personas and autonomous agents: Violet, Zinnia, Xylia, Wisteria, and Yarrow (she/her).
 
 The ViLabs Agent Scaffolder is a core lifecycle component that generates comprehensive prompts for AI coding agents, enabling autonomous implementation of system changes with consistent technical depth.
 
