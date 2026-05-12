@@ -3,10 +3,11 @@
 Welcome to the Vidoxlabs GitHub organization.
 
 Vidoxlabs engineers autonomous systems for Artificial Intelligence development, sophisticated local data routing, and advanced AI agent orchestration across LLM-driven platforms.
+Our vision centers on resilient agentic workflows coordinated through the Model Context Protocol (MCP) to deliver deterministic context exchange and autonomous execution at scale.
 
 ## Core Infrastructure: The V37 Cluster
 
-The V37 Cluster is our primary production environment: a highly integrated, multi-node system for LLM context management, personal data routing, and advanced home automation.
+The V37 Cluster is our primary production environment: a highly integrated, multi-node system for LLM context management, Model Context Protocol (MCP) routing, personal data routing, and advanced home automation.
 
 Its network and security architecture is built on the projectvi.net domain infrastructure and layered with DNS over HTTPS (DoH), Tailscale, WireGuard, and Cloudflare to enforce resilient connectivity and controlled access.
 
