@@ -4,7 +4,7 @@
 
 Vidoxlabs LLC is an autonomous systems engineering organization operating at the intersection of sovereign AI infrastructure, deterministic agent execution, and enterprise-grade local compute orchestration.
 
-We architect and deploy **Orchestral Autonomous Intelligence** frameworks that coordinate multi-agent pipelines across LLM-driven platforms. Our operational doctrine is defined by **Algorithmic Determinism**: structured, reproducible, and fully auditable intelligence workflows executed without dependency on external cloud primitives.
+We architect and deploy **Orchestral Autonomous Intelligence** frameworks that coordinate multi-agent pipelines across LLM-driven platforms. Our operational doctrine is defined by **Algorithmic Determinism**: structured, reproducible, and fully auditable intelligence workflows executed without dependency on external cloud primitives for core inference and pipeline execution.
 
 All context exchange is governed by the **Model Context Protocol (MCP)**, establishing resilient, deterministic routing between agents, models, and data systems at scale.
 
