@@ -36,7 +36,7 @@ The **Cluster Relations Systems (CRS)** workstream governs inter-agent communica
 
 ### Multi-Agent Pipelines
 
-Vidoxlabs actively develops and maintains **Multi-Agent Pipeline** architectures that orchestrate discrete AI agents across coordinated task graphs. Pipelines are defined as directed execution contracts with explicit context boundaries, handoff schemas, and deterministic termination conditions.
+Vidoxlabs actively develops and maintains **Multi-Agent Pipelines** that orchestrate discrete AI agents across coordinated task graphs. Pipelines are defined as directed execution contracts with explicit context boundaries, handoff schemas, and deterministic termination conditions.
 
 ## Tech Stack & Technologies
 
