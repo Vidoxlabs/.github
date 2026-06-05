@@ -12,9 +12,9 @@ All context exchange is governed by the **Model Context Protocol (MCP)**, establ
 
 The V37 Cluster is Vidoxlabs' primary local compute orchestration environment — a highly integrated, multi-node system engineered for LLM context management, MCP routing, sovereign data pathways, and **Grand Autonomous Operations** at the infrastructure layer.
 
-Network and security architecture is anchored to the `projectvi.net` domain topology, enforcing layered access control through DNS over HTTPS (DoH), Tailscale mesh networking, WireGuard tunneling, and Cloudflare edge policy. Connectivity is resilient by design; controlled access is non-negotiable.
+Network and security architecture uses layered access control (e.g., DoH, mesh VPN, tunneling, and edge policy). Connectivity is resilient by design; controlled access is non-negotiable.
 
-Hardware execution is macOS-first, built on MacBook Pro M4 systems, supplanting legacy hypervisor architectures with tightly coupled, high-throughput local compute — purpose-built for inference workloads, agentic execution loops, and deterministic pipeline staging.
+Hardware execution is macOS-first on Apple silicon, supplanting legacy hypervisor architectures with tightly coupled, high-throughput local compute — purpose-built for inference workloads, agentic execution loops, and deterministic pipeline staging.
 
 ## Local LLM Infrastructure & Algorithmic Determinism
 
