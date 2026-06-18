@@ -4,23 +4,19 @@
 
 Vidoxlabs LLC is an autonomous systems engineering organization operating at the intersection of sovereign AI infrastructure, deterministic agent execution, and enterprise-grade local compute orchestration.
 
-We architect and deploy **Orchestral Autonomous Intelligence** frameworks that coordinate multi-agent pipelines across LLM-driven platforms. Our operational doctrine is defined by **Algorithmic Determinism**: structured, reproducible, and fully auditable intelligence workflows executed without dependency on external cloud primitives for core inference and pipeline execution.
+We architect and deploy **Orchestral Autonomous Intelligence** frameworks that coordinate multi-agent pipelines across LLM-driven platforms. Our operational doctrine is defined by **Algorithmic Determinism**: structured, reproducible, and fully auditable intelligence workflows.
 
-All context exchange is governed by the **Model Context Protocol (MCP)**, establishing resilient, deterministic routing between agents, models, and data systems at scale.
+## Core Infrastructure: V37
 
-## Core Infrastructure: The V37 Cluster
-
-The V37 Cluster is Vidoxlabs' primary local compute orchestration environment — a highly integrated, multi-node system engineered for LLM context management, MCP routing, sovereign data pathways, and **Grand Autonomous Operations** at the infrastructure layer.
+V37 is Vidoxlabs' core compute orchestration environment. In order to ensure proper workflow delegation for effective development, the creation of a platform to facilitate hybrid computations was required.
 
 Network and security architecture uses layered access control (e.g., DoH, mesh VPN, tunneling, and edge policy). Connectivity is resilient by design; controlled access is non-negotiable.
 
-Hardware execution is macOS-first on Apple silicon, supplanting legacy hypervisor architectures with tightly coupled, high-throughput local compute — purpose-built for inference workloads, agentic execution loops, and deterministic pipeline staging.
+Hardware execution is purpose-built for inference workloads, agentic execution loops, and deterministic pipeline staging.
 
-## Local LLM Infrastructure & Algorithmic Determinism
+## Infrastructure & Algorithmic Determinism
 
-Vidoxlabs operates a sovereign local LLM infrastructure stack purpose-engineered for reproducible, bias-auditable model execution. All inference runs on controlled hardware with no external telemetry exposure. Model behavior is governed by structured prompt engineering, deterministic context injection via MCP, and formal agent scaffolding protocols.
-
-**Algorithmic Determinism** is a first-class operational constraint: every pipeline stage, context handoff, and agent invocation is logged, versioned, and reproducible. Non-deterministic execution paths are explicitly scoped and documented.
+**Algorithmic Determinism** Reproduceable output to reproduced input is a state machine, but variable input to calculated output would be unique. Our goal is to make sure it's grounded in logical reasoning.
 
 ## The Intelligence Cabinet
 
@@ -37,12 +33,3 @@ The **Cluster Relations Systems (CRS)** workstream governs inter-agent communica
 ### Multi-Agent Pipelines
 
 Vidoxlabs actively develops and maintains **Multi-Agent Pipelines** that orchestrate discrete AI agents across coordinated task graphs. Pipelines are defined as directed execution contracts with explicit context boundaries, handoff schemas, and deterministic termination conditions.
-
-## Tech Stack & Technologies
-
-- Python
-- Node-RED
-- GitHub Copilot
-- GitKraken Pro
-- Firebase Studio
-- Open WebUI
