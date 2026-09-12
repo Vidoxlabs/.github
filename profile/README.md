@@ -112,9 +112,10 @@ An evidence-focused engineering portfolio built with Astro and served as static 
 <!-- BEGIN REPO TABLE -->
 | Repository | Description | Language | Stars |
 |---|---|---|---|
-| [.github](https://github.com/Vidoxlabs/.github) | Organization profile and community health files | HTML | 0 |
-| [videsign](https://github.com/Vidoxlabs/videsign) | Nocturne Museum design system — semantic token matrix, HTML preview fragments, MCP server | JavaScript | 0 |
-| [vitools-public](https://github.com/Vidoxlabs/vitools-public) | Skills, plugins, and tooling for the Vidoxlabs AI ecosystem (public portfolio subset) | | 0 |
+| [.github](https://github.com/Vidoxlabs/.github) | Vidoxlabs public landing page. Dedicated to Artificial Intelligence development, autonomous systems, and advanced LLM orchestration. | - | 0 |
+| [videsign](https://github.com/Vidoxlabs/videsign) | videsign is Vidoxlabs’ JavaScript-based design system and component library, providing reusable UI primitives, visual language standards, preview components, and an MCP server to support consistent theming and interface development across the sovereign AI agent ecosystem. | HTML | 0 |
+| [vijule-profiles](https://github.com/Vidoxlabs/vijule-profiles) |  | - | 0 |
+| [vitools-public](https://github.com/Vidoxlabs/vitools-public) | Skills, plugins, and tooling for the Vidoxlabs AI ecosystem (public portfolio subset — internal agent/infra configs kept private) | Python | 0 |
 <!-- END REPO TABLE -->
 
 _Auto-synced weekly via CI — see [sync workflow](https://github.com/Vidoxlabs/.github/blob/main/.github/workflows/sync-repo-table.yml)._
