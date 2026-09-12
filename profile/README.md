@@ -109,10 +109,15 @@ An evidence-focused engineering portfolio built with Astro and served as static 
 
 ## Public repositories
 
-| Repository | Description |
-|---|---|
-| [videsign](https://github.com/Vidoxlabs/videsign) | Nocturne Museum design system — semantic token matrix, HTML preview fragments, MCP server |
-| [vitools-public](https://github.com/Vidoxlabs/vitools-public) | Skills, plugins, and tooling for the Vidoxlabs AI ecosystem (public portfolio subset) |
+<!-- BEGIN REPO TABLE -->
+| Repository | Description | Language | Stars |
+|---|---|---|---|
+| [.github](https://github.com/Vidoxlabs/.github) | Organization profile and community health files | HTML | 0 |
+| [videsign](https://github.com/Vidoxlabs/videsign) | Nocturne Museum design system — semantic token matrix, HTML preview fragments, MCP server | JavaScript | 0 |
+| [vitools-public](https://github.com/Vidoxlabs/vitools-public) | Skills, plugins, and tooling for the Vidoxlabs AI ecosystem (public portfolio subset) | | 0 |
+<!-- END REPO TABLE -->
+
+_Auto-synced weekly via CI — see [sync workflow](https://github.com/Vidoxlabs/.github/blob/main/.github/workflows/sync-repo-table.yml)._
 
 ---
 

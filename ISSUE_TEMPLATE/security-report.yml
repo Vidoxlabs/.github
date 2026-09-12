@@ -1,0 +1,47 @@
+---
+name: Security report
+description: Report a security vulnerability in a Vidoxlabs project
+labels: ["security"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        If you have found a security vulnerability, please do NOT open a public issue.
+        Instead, see our [SECURITY.md](https://github.com/Vidoxlabs/.github/blob/main/SECURITY.md)
+        for the responsible disclosure process.
+
+        Use this form only if the issue is low-risk and you are confident public disclosure
+        is appropriate. For anything else, email admin@vidoxlabs.dev directly.
+  - type: dropdown
+    id: project
+    attributes:
+      label: Project
+      description: Which Vidoxlabs project is affected?
+      options:
+        - videsign
+        - vitools-public
+        - .github (org profile)
+        - Other / not sure
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: Describe the vulnerability and its potential impact.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Reproduction steps
+      description: How can the vulnerability be triggered?
+    validations:
+      required: true
+  - type: textarea
+    id: mitigation
+    attributes:
+      label: Suggested mitigation
+      description: If you have a fix or mitigation in mind, describe it here.
+    validations:
+      required: false

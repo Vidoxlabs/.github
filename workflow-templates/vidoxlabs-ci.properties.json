@@ -1,0 +1,3 @@
+name: Vidoxlabs CI
+description: Reusable CI starter for Vidoxlabs public repositories — lint, test, and build validation.
+image: https://img.shields.io/badge/CI-vidoxlabs-blue

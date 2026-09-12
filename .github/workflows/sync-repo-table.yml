@@ -1,0 +1,91 @@
+name: Sync public repo table
+
+on:
+  schedule:
+    - cron: "0 0 * * 1"  # Weekly on Monday at 00:00 UTC
+  workflow_dispatch: {}   # Manual trigger
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/sync-repo-table.yml"
+      - "profile/README.md"
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Generate public repo table
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          # Fetch all public repos for the org
+          REPOS=$(gh api /orgs/Vidoxlabs/repos --paginate --jq '[.[] | select(.visibility == "public") | {name, description, html_url, stargazers_count, language}] | sort_by(.name)' 2>/dev/null)
+
+          if [ -z "$REPOS" ] || [ "$REPOS" = "[]" ]; then
+            echo "No public repos found, skipping"
+            exit 0
+          fi
+
+          # Build the markdown table
+          TABLE=$(echo "$REPOS" | node -e "
+            const repos = JSON.parse(require('fs').readFileSync(0, 'utf-8'));
+            let lines = ['| Repository | Description | Language | Stars |', '|---|---|---|---|'];
+            for (const r of repos) {
+              const desc = r.description || '';
+              const lang = r.language || '-';
+              const stars = r.stargazers_count || 0;
+              lines.push('| [' + r.name + '](' + r.html_url + ') | ' + desc + ' | ' + lang + ' | ' + stars + ' |');
+            }
+            console.log(lines.join('\n'));
+          ")
+
+          echo "Generated table:"
+          echo "$TABLE"
+
+          # Write to a temp file for the next step
+          echo "$TABLE" > /tmp/repo-table.md
+
+      - name: Update profile README
+        run: |
+          TABLE=$(cat /tmp/repo-table.md)
+
+          # Use markers in the README to replace just the table section
+          # Markers: <!-- BEGIN REPO TABLE --> and <!-- END REPO TABLE -->
+          README="profile/README.md"
+
+          if ! grep -q "<!-- BEGIN REPO TABLE -->" "$README"; then
+            echo "No repo table markers found in README, skipping"
+            exit 0
+          fi
+
+          # Replace everything between the markers
+          python3 -c "
+          import re
+          with open('$README', 'r') as f:
+            content = f.read()
+          table = '''$TABLE'''
+          new_content = re.sub(
+            r'<!-- BEGIN REPO TABLE -->.*?<!-- END REPO TABLE -->',
+            '<!-- BEGIN REPO TABLE -->\n' + table + '\n<!-- END REPO TABLE -->',
+            content,
+            flags=re.DOTALL
+          )
+          with open('$README', 'w') as f:
+            f.write(new_content)
+          "
+
+          # Check if anything changed
+          if git diff --quiet "$README"; then
+            echo "No changes to repo table, skipping commit"
+            exit 0
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add "$README"
+          git commit -m "chore: auto-sync public repo table [skip ci]"
+          git push

@@ -1,0 +1,4 @@
+# Org-level CODEOWNERS — applies to .github repo content only.
+# Individual repos should have their own CODEOWNERS for repo-specific routing.
+
+* @viotic

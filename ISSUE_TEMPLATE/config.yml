@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Vidoxlabs website
+    url: https://vidoxlabs.dev
+    about: Visit our portfolio site for project overviews and research data.
+  - name: Security report
+    url: https://github.com/Vidoxlabs/.github/security/policy
+    about: Report security vulnerabilities — see SECURITY.md for disclosure process.
