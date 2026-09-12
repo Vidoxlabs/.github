@@ -1,4 +1,4 @@
-![vidoxlabs-banner-v1.png](https://github.com/user-attachments/assets/e6fef43b-575e-43c6-8c3b-ac903bde0986)
+![Vidoxlabs banner](vidoxlabs-banner.png)
 
 # Vidoxlabs
 
