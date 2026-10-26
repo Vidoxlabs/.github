@@ -1,4 +1,4 @@
-![Vidoxlabs brand v1 banner: violet V monogram above the white Vidoxlabs wordmark on a dark background, with a thin violet rule beneath the name.](vidoxlabs-banner.png)
+![Vidoxlabs brand v1 banner: multicolour cube mark (five-facet VWXYZ mark), the Vidoxlabs wordmark, the tagline "Applied AI systems, built with evidence.", and a five-colour rule.](vidoxlabs-banner.png)
 
 <img src="vwxyz-stripe-tile.svg" alt="Vidoxlabs brand color stripe: violet, lavender, red, amber, and pink bars on a dark background." width="100%">
 
