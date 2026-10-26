@@ -32,7 +32,7 @@ Violet (persona + behavioral contract)
 
 ### ViBot — Backend & control plane
 
-ViBot is Violet's centralized backend — a Python 3.12 / aiohttp / pydantic service running on the v37 compute cluster. It handles conversation routing, memory gateway, continuity identity, commitments, follow-ups, dev handoffs, and Mac action orchestration. Every API route requires signed HS256 BFF assertions — a listening port is not authentication.
+ViBot is Violet's centralized backend — a Python 3.12 / aiohttp / pydantic service running on the compute cluster. It handles conversation routing, memory gateway, continuity identity, commitments, follow-ups, dev handoffs, and Mac action orchestration. Every API route requires signed HS256 BFF assertions — a listening port is not authentication.
 
 | Metric | Value |
 |---|---|
@@ -56,15 +56,15 @@ ViApp is the native macOS companion app for Violet, built in Swift (SwiftUI + Ap
 
 ## Infrastructure
 
-### V37 cluster
+### Compute cluster
 
 A three-node Proxmox cluster purpose-built for inference workloads, agentic execution loops, and deterministic pipeline staging.
 
-| Node | Role | Key guests |
+| Role | Responsibility | Workload kinds |
 |---|---|---|
-| v37-heavy | Compute / inference / development | Inference node, dev container |
-| v37-medium | Durable service substrate | PostgreSQL, Redis, Neo4j, Infisical, MinIO |
-| v37-light | CRS / MCP tooling plane | Context Retrieval System |
+| Compute node | Compute, inference, and development | Model inference and development workloads |
+| Storage node | Durable data and service substrate | Databases, caches, object storage, and secrets management |
+| Control node | Tooling plane | Context retrieval and agent tooling |
 
 Network and security architecture uses layered access control (DoH, mesh VPN, tunneling, edge policy). Controlled access is non-negotiable.
 
