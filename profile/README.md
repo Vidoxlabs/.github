@@ -108,7 +108,7 @@ An evidence-focused engineering portfolio built with Astro and served as static 
 |---|---|---|---|
 | [.github](https://github.com/Vidoxlabs/.github) | Vidoxlabs public landing page. Dedicated to Artificial Intelligence development, autonomous systems, and advanced LLM orchestration. | - | 0 |
 | [colab-ollama-bridge](https://github.com/Vidoxlabs/colab-ollama-bridge) | Securely connect OpenCode-compatible clients to Ollama on Google Colab or remote NVIDIA GPUs through Cloudflare Tunnel. | Python | 0 |
-| [videsign](https://github.com/Vidoxlabs/videsign) | videsign is Vidoxlabs’ JavaScript-based design system and component library, providing reusable UI primitives, visual language standards, preview components, and an MCP server to support consistent theming and interface development across the sovereign AI agent ecosystem. | HTML | 0 |
+| [videsign](https://github.com/Vidoxlabs/videsign) | videsign is Vidoxlabs’ JavaScript-based design system and component library, providing reusable UI primitives, visual language standards, preview components, and an MCP server to support consistent theming and interface development across the sovereign AI agent ecosystem. | JavaScript | 0 |
 | [vijule-profiles](https://github.com/Vidoxlabs/vijule-profiles) |  | - | 0 |
 | [vitools-public](https://github.com/Vidoxlabs/vitools-public) | Skills, plugins, and tooling for the Vidoxlabs AI ecosystem (public portfolio subset — internal agent/infra configs kept private) | Python | 0 |
 <!-- END REPO TABLE -->
