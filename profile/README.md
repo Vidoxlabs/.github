@@ -4,7 +4,7 @@
 
 Vidoxlabs LLC is an autonomous systems engineering organization building sovereign AI infrastructure, deterministic agent execution, and local compute orchestration. We architect intelligence workflows that are structured, reproducible, and fully auditable — what we call **Algorithmic Determinism**.
 
-Our flagship system is **Violet**, an AI copilot running across a native macOS client, a Python backend, and a three-node Proxmox cluster. Below is what we build and the infrastructure behind it.
+Our flagship system is **Violet**, an AI copilot running across a native macOS client, a Python backend, and private compute infrastructure. Below is what we build and the infrastructure behind it.
 
 ---
 
@@ -32,14 +32,14 @@ Violet (persona + behavioral contract)
 
 ### ViBot — Backend & control plane
 
-ViBot is Violet's centralized backend — a Python 3.12 / aiohttp / pydantic service running on the compute cluster. It handles conversation routing, memory gateway, continuity identity, commitments, follow-ups, dev handoffs, and Mac action orchestration. Every API route requires signed HS256 BFF assertions — a listening port is not authentication.
+ViBot is Violet's centralized backend — a Python 3.12 / aiohttp / pydantic service running on private compute infrastructure. It handles conversation routing, memory gateway, continuity identity, commitments, follow-ups, dev handoffs, and Mac action orchestration. Every API route requires signed HS256 BFF assertions — a listening port is not authentication.
 
 | Metric | Value |
 |---|---|
 | Language | Python 3.12, aiohttp, pydantic |
 | Tests | 4,341 passed, 0 failed, 6 skipped |
 | Turn pipeline | classify → evidence demand → CRS → memory → provider |
-| Provider | Ollama qwen3.5:4b on dedicated inference node |
+| Provider | Ollama qwen3.5:4b |
 
 ### ViApp — Native macOS client
 
@@ -56,21 +56,15 @@ ViApp is the native macOS companion app for Violet, built in Swift (SwiftUI + Ap
 
 ## Infrastructure
 
-### Compute cluster
+### Private compute infrastructure
 
-A three-node Proxmox cluster purpose-built for inference workloads, agentic execution loops, and deterministic pipeline staging.
+Private infrastructure for inference, durable data, and agent tooling, behind layered access control. It is purpose-built for inference workloads, agentic execution loops, and deterministic pipeline staging.
 
-| Role | Responsibility | Workload kinds |
-|---|---|---|
-| Compute node | Compute, inference, and development | Model inference and development workloads |
-| Storage node | Durable data and service substrate | Databases, caches, object storage, and secrets management |
-| Control node | Tooling plane | Context retrieval and agent tooling |
-
-Network and security architecture uses layered access control (DoH, mesh VPN, tunneling, edge policy). Controlled access is non-negotiable.
+Network and security architecture uses layered access control. Controlled access is non-negotiable.
 
 ### CRS — Context Retrieval System
 
-The CRS provides signed-assertion historical evidence retrieval for ViBot. During turn processing, ViBot optionally queries CRS for historical evidence before generating a response. CRS ingests content into PostgreSQL and MinIO, exposing a signed-assertion API and an MCP SSE endpoint for local tool access.
+The CRS provides signed-assertion historical evidence retrieval for ViBot. During turn processing, ViBot optionally queries CRS for historical evidence before generating a response. CRS ingests content into relational and object storage, exposing a signed-assertion API and an MCP SSE endpoint for local tool access.
 
 - API with HS256 signed assertions (fail-closed 401 on unsigned requests)
 - MCP SSE endpoint for agent-consumable tool access
@@ -78,7 +72,7 @@ The CRS provides signed-assertion historical evidence retrieval for ViBot. Durin
 
 ### Memorix — Memory system
 
-Memorix is the durable memory system for Violet's continuity. It provides bounded memory retrieval, consent-gated remember/forget lifecycle, canonical tombstones with epoch (no resurrection), and Neo4j candidate search with Redis caching.
+Memorix is the durable memory system for Violet's continuity. It provides bounded memory retrieval, consent-gated remember/forget lifecycle, canonical tombstones with epoch (no resurrection), and graph search with caching.
 
 - Contract version 1.1.0 with 7 capabilities and fail-closed states
 - MCP-SSE gateway adapter with HMAC canonical signing
