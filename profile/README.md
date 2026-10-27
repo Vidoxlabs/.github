@@ -1,4 +1,6 @@
-![Vidoxlabs banner](vidoxlabs-banner.png)
+![Multicolour five-facet cube mark beside the Vidoxlabs wordmark, the tagline "Applied AI systems, built with evidence.", and a five-colour rule.](vidoxlabs-banner.png)
+
+<img src="brand-stripe-tile.svg" alt="Vidoxlabs brand color stripe: violet, lavender, red, amber, and pink bars on a dark background." width="100%">
 
 # Vidoxlabs
 
