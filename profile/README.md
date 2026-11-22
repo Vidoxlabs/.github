@@ -51,7 +51,7 @@ Every public repository in this org holds the same discipline:
 <!-- BEGIN REPO TABLE -->
 | Repository | Description | Language | Stars |
 |---|---|---|---|
-| [.github](https://github.com/Vidoxlabs/.github) | Vidoxlabs public landing page. Dedicated to Artificial Intelligence development, autonomous systems, and advanced LLM orchestration. | - | 0 |
+| [.github](https://github.com/Vidoxlabs/.github) | Vidoxlabs org profile: the agentic frameworks family, its shared engineering law, and org-wide contributor, security, and issue tooling. | - | 0 |
 | [aestivation](https://github.com/Vidoxlabs/aestivation) | Plan proposal, deterministic validation, review verdicts, and the assembly gate. The admission and review loop in the bloom agent family. | JavaScript | 0 |
 | [bloom](https://github.com/Vidoxlabs/bloom) | A local-first, model-agnostic workspace for agent teams. Create a head agent, share a desktop, and follow the work from brief to artifact. | JavaScript | 0 |
 | [capillary](https://github.com/Vidoxlabs/capillary) | A local-first context retrieval system: provenance-honest sources, bounded packets, and context relations for agent workspaces like Bloom | JavaScript | 0 |
