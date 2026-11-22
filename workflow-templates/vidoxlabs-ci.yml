@@ -1,11 +1,10 @@
 # Vidoxlabs CI — reusable workflow template
 #
-# This template provides a standard CI pipeline for Vidoxlabs public
-# repositories. Copy this file into your repo as .github/workflows/ci.yml
-# and adjust the language/tooling steps as needed.
-#
-# Required secrets:
-#   None — uses GITHUB_TOKEN (read-only)
+# The public agent-family discipline, as a starting point:
+#   - Node >= 22.13 (engines floor the family repos pin)
+#   - `npm test` is a hard gate — never continue-on-error
+#   - zero runtime dependencies, so install only when lockfiles exist
+# Edit for the needs of the repo you copy this into.
 
 name: CI
 
@@ -16,26 +15,22 @@ on:
     branches: [main]
 
 jobs:
-  validate:
+  test:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
 
       - uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 22.13
 
-      - name: Install dependencies
-        run: npm install
-
-      - name: Lint
-        run: npm run lint
-        continue-on-error: true
+      - name: Install dependencies (only when a lockfile exists)
+        run: |
+          if [ -f package-lock.json ] || [ -f npm-shrinkwrap.json ]; then
+            npm ci
+          else
+            echo "No lockfile — zero-runtime-dependency repository, skipping install."
+          fi
 
       - name: Test
         run: npm test
-        continue-on-error: true
-
-      - name: Build
-        run: npm run build
-        continue-on-error: true

@@ -9,8 +9,14 @@ body:
       label: Project
       description: Which Vidoxlabs project would this affect?
       options:
+        - seed
+        - capillary
+        - myosotis
+        - aestivation
+        - drosera
+        - trellis
+        - bloom
         - videsign
-        - vitools-public
         - .github (org profile)
         - Other / not sure
     validations:

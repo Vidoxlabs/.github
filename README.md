@@ -3,6 +3,11 @@
 Vidoxlabs organization profile repository. GitHub renders [`profile/README.md`](profile/README.md)
 as the public landing page at [github.com/Vidoxlabs](https://github.com/Vidoxlabs).
 
+The profile shows the current trajectory: agentic frameworks — the agent family
+(`seed`, `capillary`, `myosotis`, `aestivation`, `drosera`, `trellis`, `bloom`) and the
+[`videsign`](https://github.com/Vidoxlabs/videsign) design system — under one engineering law:
+honest claim labels, green tests, fail-closed semantics, no secrets in public files.
+
 ## Contents
 
 ```

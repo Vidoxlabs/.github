@@ -13,8 +13,14 @@ Brief description of what changed and why.
 
 ## Project
 
+- [ ] seed
+- [ ] capillary
+- [ ] myosotis
+- [ ] aestivation
+- [ ] drosera
+- [ ] trellis
+- [ ] bloom
 - [ ] videsign
-- [ ] vitools-public
 - [ ] .github (org profile)
 - [ ] Other
 
@@ -24,6 +30,7 @@ Brief description of what changed and why.
 
 ## Verification
 
-- [ ] CI passes
-- [ ] Tests pass
-- [ ] Documentation updated if needed
+- [ ] `npm test` passes (Node >= 22.13)
+- [ ] Every capability claim's label (`implemented` / `specified` / `planned` / `observed`) is still true after this change
+- [ ] Docs updated in the same PR where behavior changed
+- [ ] No secrets, internal hostnames, or private network detail in the diff

@@ -4,102 +4,45 @@
 
 # Vidoxlabs
 
-Vidoxlabs LLC is an autonomous systems engineering organization building sovereign AI infrastructure, deterministic agent execution, and local compute orchestration. We architect intelligence workflows that are structured, reproducible, and fully auditable — what we call **Algorithmic Determinism**.
+Vidoxlabs builds **agentic frameworks** — a family of small, honest, dependency-free components that make AI agents runnable, feedable, memorable, accountable, and testable — together with the design system that keeps everything we ship looking like it belongs together.
 
-Our flagship system is **Violet**, an AI copilot running across a native macOS client, a Python backend, and private compute infrastructure. Below is what we build and the infrastructure behind it.
+Earlier Vidoxlabs engineering lived mostly behind gates: private systems, internal tooling, gated infrastructure. That generation built real things and taught hard lessons — consent-gated memory, structural forgetting, fail-closed checks, deterministic validation — and those lessons are now open. Today the trajectory is public-first: every component in the table below is a working, tested repository you can read, run, and build on, and the systems we run ourselves are being re-engineered onto this same foundation.
+
+Nothing here is vaporware and nothing overclaims. Each repository carries its own honest status; when a capability is specified rather than shipped, the repo says so.
 
 ---
 
-## What we build
+## The agent family
 
-### Violet — AI copilot
+The public products take ordinary botanical words, named for what each system does — one design law across the line:
 
-The active Vidoxlabs Intelligence. Violet is a conversational daily-driver copilot with persistent memory, evidence-grounded job reviews, push-to-talk voice, and two-phase Mac action authorization. She operates under a defined behavioral contract with a pinned persona digest, ensuring consistent behavior across sessions.
-
-**Architecture:**
-
-```
-Violet (persona + behavioral contract)
-  ├── ViBot  — Python backend, signed BFF assertions, turn pipeline
-  └── ViApp  — Native macOS client, voice, staged context, Chibi companion
-```
-
-**Key capabilities:**
-- Natural conversation with mode/depth routing (behavior-v2, A–J semantic matrix)
-- Commitment capture, revision, and persistent follow-ups
-- Job reviews with evidence-grounded analysis (no job-description-quote-for-applicant-claim)
-- Push-to-talk voice (Faster-Whisper STT + Kokoro-82M TTS)
-- Two-phase Mac action authorization with signed assertions
-- Context sharing via clipboard and window OCR
-
-### ViBot — Backend & control plane
-
-ViBot is Violet's centralized backend — a Python 3.12 / aiohttp / pydantic service running on private compute infrastructure. It handles conversation routing, memory gateway, continuity identity, commitments, follow-ups, dev handoffs, and Mac action orchestration. Every API route requires signed HS256 BFF assertions — a listening port is not authentication.
-
-| Metric | Value |
+| Name | Province |
 |---|---|
-| Language | Python 3.12, aiohttp, pydantic |
-| Tests | 4,341 passed, 0 failed, 6 skipped |
-| Turn pipeline | classify → evidence demand → CRS → memory → provider |
-| Provider | Ollama qwen3.5:4b |
+| [`seed`](https://github.com/Vidoxlabs/seed) | The agent harness foundation: run contracts, neutral tool identity, provider adapters |
+| [`capillary`](https://github.com/Vidoxlabs/capillary) | Context retrieval and relations: provenance-honest sources, bounded packets |
+| [`myosotis`](https://github.com/Vidoxlabs/myosotis) | Governed memory: consent to keep, structural forget — the flower is a forget-me-not |
+| [`aestivation`](https://github.com/Vidoxlabs/aestivation) | Admission and review: plan proposals, deterministic rule packs, verdicts, the assembly gate |
+| [`drosera`](https://github.com/Vidoxlabs/drosera) | The tooling fabric: tool faces, skills, hooks, cookbooks |
+| [`trellis`](https://github.com/Vidoxlabs/trellis) | The testing lattice: multi-point probes — shape, behavior, consistency, operational |
+| [`bloom`](https://github.com/Vidoxlabs/bloom) | The team workspace harness the family serves: agent teams, shared desktop, shipped artifacts |
 
-### ViApp — Native macOS client
+Family governance lives in each repository's own contracts and in [the naming law](https://github.com/Vidoxlabs/capillary/blob/main/docs/family.md). Health is not claimed; it is observed — [`trellis`](https://github.com/Vidoxlabs/trellis) runs dated, multi-point verification over the family and [keeps the receipts](https://github.com/Vidoxlabs/trellis/blob/main/docs/evidence/family-grid-2026-11-22.md).
 
-ViApp is the native macOS companion app for Violet, built in Swift (SwiftUI + AppKit). It provides the conversational interface, voice I/O, staged context sharing, the Chibi companion, and governed Mac actions. The app authenticates through a signed BFF layer to ViBot.
+### videsign
 
-| Metric | Value |
-|---|---|
-| Language | Swift (SwiftUI + AppKit) |
-| Tests | 429 passed, 0 failures |
-| Voice | Faster-Whisper STT + Kokoro-82M TTS |
-| Signing | Ad-hoc signed, package verification PASS |
+[`videsign`](https://github.com/Vidoxlabs/videsign) is the shared design system and component library — visual language, semantic tokens, and an MCP server so agents and humans build with the same design canon. The next generation of [vidoxlabs.dev](https://vidoxlabs.dev) is being rebuilt on it.
 
 ---
 
-## Infrastructure
+## The engineering law
 
-### Private compute infrastructure
+Every public repository in this org holds the same discipline:
 
-Private infrastructure for inference, durable data, and agent tooling, behind layered access control. It is purpose-built for inference workloads, agentic execution loops, and deterministic pipeline staging.
-
-Network and security architecture uses layered access control. Controlled access is non-negotiable.
-
-### CRS — Context Retrieval System
-
-The CRS provides signed-assertion historical evidence retrieval for ViBot. During turn processing, ViBot optionally queries CRS for historical evidence before generating a response. CRS ingests content into relational and object storage, exposing a signed-assertion API and an MCP SSE endpoint for local tool access.
-
-- API with HS256 signed assertions (fail-closed 401 on unsigned requests)
-- MCP SSE endpoint for agent-consumable tool access
-- Wired into cluster health checks and verification pipeline
-
-### Memorix — Memory system
-
-Memorix is the durable memory system for Violet's continuity. It provides bounded memory retrieval, consent-gated remember/forget lifecycle, canonical tombstones with epoch (no resurrection), and graph search with caching.
-
-- Contract version 1.1.0 with 7 capabilities and fail-closed states
-- MCP-SSE gateway adapter with HMAC canonical signing
-- Database schema with RLS-force (continuity identities, consent, records, tombstones, receipts)
-- Status: adapter implemented and tested, provisioning pending
-
-### ARKSRRA — Deliberation framework (research)
-
-ARKSRRA is a seven-stage action deliberation framework: hypotheses → findings → decisions → proposals → reviews → ratification → execution. Designed to route high-risk or uncertain evidence turns through multi-agent deliberation before execution, with a durable human authority gate ("Ratify") that the LLM cannot infer.
-
-- Historical lineage: 162 commits with multi-modal DB adapters (PG, Mongo, Redis, Neo4j, ES, Weaviate)
-- Status: reconciled as permanently disabled in production — case study only
-- The typed gate refuses Action on every path, truthfully reporting unavailability
-
----
-
-## Portfolio
-
-### [vidoxlabs.dev](https://vidoxlabs.dev)
-
-An evidence-focused engineering portfolio built with Astro and served as static files by Cloudflare Workers Static Assets. Every public claim traces to stable claim IDs, evidence, and source revisions. The `/research` data plane shows AI provider pricing and comparison data, powered by a separate Cloudflare Worker with D1 + KV.
-
-- Production since 2026-09-12 (apex cutover from legacy hold point)
-- Fail-closed content model with Zod validation and publication gates
-- CI: GitHub Actions with full validation chain (typecheck, lint, test, content validation, route validation, Cloudflare validation, output scanner)
+- **MIT licensed, zero runtime dependencies, Node >= 22.13.** `npm test` runs the built-in runner and must stay green — a claim of `implemented` requires a passing test named for it.
+- **Honest claim labels.** Capabilities carry labels — `implemented`, `specified`, `planned`, `observed` — and the label must be true on its face. A contract that ships without code is labeled `specified`, not marketed as done.
+- **Fail closed, in the products and in their tests.** Hooks fail closed, gates hold, unknown stays unknown, forgotten means forgotten. Probes that check these rules fail closed too.
+- **Public means public.** No secrets, internal hostnames, network topologies, or credentials in any public file, ever.
+- **Determinism as doctrine.** Validation is deterministic first and judgment second, and neither borrows the other's job. What an owner must ratify, an owner ratifies.
 
 ---
 
@@ -109,10 +52,14 @@ An evidence-focused engineering portfolio built with Astro and served as static 
 | Repository | Description | Language | Stars |
 |---|---|---|---|
 | [.github](https://github.com/Vidoxlabs/.github) | Vidoxlabs public landing page. Dedicated to Artificial Intelligence development, autonomous systems, and advanced LLM orchestration. | - | 0 |
-| [colab-ollama-bridge](https://github.com/Vidoxlabs/colab-ollama-bridge) | Securely connect OpenCode-compatible clients to Ollama on Google Colab or remote NVIDIA GPUs through Cloudflare Tunnel. | Python | 0 |
+| [aestivation](https://github.com/Vidoxlabs/aestivation) | Plan proposal, deterministic validation, review verdicts, and the assembly gate. The admission and review loop in the bloom agent family. | JavaScript | 0 |
+| [bloom](https://github.com/Vidoxlabs/bloom) | A local-first, model-agnostic workspace for agent teams. Create a head agent, share a desktop, and follow the work from brief to artifact. | JavaScript | 0 |
+| [capillary](https://github.com/Vidoxlabs/capillary) | A local-first context retrieval system: provenance-honest sources, bounded packets, and context relations for agent workspaces like Bloom | JavaScript | 0 |
+| [drosera](https://github.com/Vidoxlabs/drosera) | The tooling fabric: tool faces, skills, hooks, and cookbooks. The extensions an agent works with, in the bloom agent family. | JavaScript | 0 |
+| [myosotis](https://github.com/Vidoxlabs/myosotis) | A governed memory fabric: consent to keep, promise to forget. The memory successor in the bloom agent family. | JavaScript | 0 |
+| [seed](https://github.com/Vidoxlabs/seed) | A local-first agent harness foundation: run contracts, tool identity, and provider adapters that work with Bloom | JavaScript | 0 |
+| [trellis](https://github.com/Vidoxlabs/trellis) | The testing lattice: multi-point probes that keep the bloom agent family honest — shape, behavior, consistency, operational. | JavaScript | 0 |
 | [videsign](https://github.com/Vidoxlabs/videsign) | videsign is Vidoxlabs’ JavaScript-based design system and component library, providing reusable UI primitives, visual language standards, preview components, and an MCP server to support consistent theming and interface development across the sovereign AI agent ecosystem. | JavaScript | 0 |
-| [vijule-profiles](https://github.com/Vidoxlabs/vijule-profiles) |  | - | 0 |
-| [vitools-public](https://github.com/Vidoxlabs/vitools-public) | Skills, plugins, and tooling for the Vidoxlabs AI ecosystem (public portfolio subset — internal agent/infra configs kept private) | Python | 0 |
 <!-- END REPO TABLE -->
 
 _Auto-synced weekly via CI — see [sync workflow](https://github.com/Vidoxlabs/.github/blob/main/.github/workflows/sync-repo-table.yml)._
@@ -127,4 +74,4 @@ _Auto-synced weekly via CI — see [sync workflow](https://github.com/Vidoxlabs/
 
 ---
 
-<sub>Vidoxlabs LLC — sovereign AI infrastructure, deterministic agent execution, local compute orchestration.</sub>
+<sub>Vidoxlabs LLC — agentic frameworks, deterministic engineering, local-first compute.</sub>
