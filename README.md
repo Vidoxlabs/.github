@@ -4,7 +4,8 @@ Vidoxlabs organization profile repository. GitHub renders [`profile/README.md`](
 as the public landing page at [github.com/Vidoxlabs](https://github.com/Vidoxlabs).
 
 The profile shows the current trajectory: the agent family (`seed`, `capillary`,
-`myosotis`, `aestivation`, `drosera`, `trellis`, `bloom`) and the
+`myosotis`, `aestivation`, `drosera`, `trellis`, `bloom`), the
+[`docs`](https://github.com/Vidoxlabs/docs) family documentation hub, and the
 [`videsign`](https://github.com/Vidoxlabs/videsign) design system. Everything public
 follows the same rules: claims stay labeled and true, tests stay green, nothing
 private goes in a public file.

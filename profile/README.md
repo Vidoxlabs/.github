@@ -21,6 +21,7 @@ Earlier Vidoxlabs engineering lived behind gates. This generation opens the less
 | [`drosera`](https://github.com/Vidoxlabs/drosera) | Tool faces, skills, hooks, cookbooks |
 | [`trellis`](https://github.com/Vidoxlabs/trellis) | Multi-point testing with dated evidence |
 | [`bloom`](https://github.com/Vidoxlabs/bloom) | The team workspace harness |
+| [`docs`](https://github.com/Vidoxlabs/docs) | Family documentation, synced from every public repository |
 
 Products take ordinary botanical words, named for what they do; the full [naming law](https://github.com/Vidoxlabs/capillary/blob/main/docs/family.md) spells it out. Health is observed, not claimed: trellis runs [dated verification](https://github.com/Vidoxlabs/trellis/blob/main/docs/evidence/family-grid-2026-11-22.md) over the whole family and keeps the receipts.
 
