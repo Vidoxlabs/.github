@@ -41,7 +41,7 @@ in the commit or advisory unless they prefer to remain anonymous.
 
 ## Security practices
 
-- Fail-closed is the house rule: checks that error, fail; projections out of date, refuse; consent missing, refuse admission
+- Fail-closed is the house rule: checks that throw fail, stale projections refuse to serve, storage without consent refuses admission
 - Secrets are never committed to repositories or copied to local machines
 - CI pipelines validate against known vulnerability patterns
 - Tool effects carry their class (read / write / destructive / credential) on the face, and gated effects route the owner's decision

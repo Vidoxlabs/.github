@@ -1,6 +1,6 @@
 # Contributing to Vidoxlabs
 
-Thank you for your interest in contributing. Public Vidoxlabs repositories — the agent family and the design system — share one engineering law, and contributions are held to it.
+Thank you for your interest in contributing. The public repositories, the agent family and the design system, share one engineering law, and contributions are held to it.
 
 ## Public repositories
 
@@ -24,7 +24,7 @@ Thank you for your interest in contributing. Public Vidoxlabs repositories — t
 ## Pull request process
 
 1. Branch from `main`.
-2. Make your changes; keep PRs focused — one logical change per PR.
+2. Make your changes; keep PRs focused: one logical change per PR.
 3. `npm test` must pass locally (Node >= 22.13; family repos use the built-in `node --test` runner and have zero runtime dependencies).
 4. Docs change with code in the same PR. There is no "docs later."
 5. Use the PR template when submitting.
@@ -33,21 +33,21 @@ Thank you for your interest in contributing. Public Vidoxlabs repositories — t
 
 Every capability in a family repository carries a label, and it must be true on its face:
 
-- `implemented` — tested code exists, and a test is named for it.
-- `specified` — a contract defines it; no shipped code does it yet.
-- `planned` — a roadmap row names the intent.
-- `observed` — a dated run recorded the evidence, kept with its receipts.
+- `implemented`: tested code exists, and a test is named for it.
+- `specified`: a contract defines it; no shipped code does it yet.
+- `planned`: a roadmap row names the intent.
+- `observed`: a dated run recorded the evidence, kept with its receipts.
 
 If your PR adds or touches a claim, its label must match the evidence in the PR. A `specified` capability that ships code becomes `implemented` in the same change; nothing is labeled stronger than what the diff proves.
 
 ## Code standards
 
-- **Family repositories:** ESM, zero runtime dependencies, frozen records, deterministic validation over data, and every behavioral rule visible as a test. Fail-closed semantics stay fail-closed.
+- **Family repositories:** ESM, zero runtime dependencies, frozen records, deterministic validation over data, and every behavioral rule visible as a test.
 - **videsign:** all design tokens must follow the `category-role-variant-state` matrix defined in `DESIGN.md`. No arbitrary values consumer-side. Run `npm run lint` and `npm run tokens` before submitting.
 
 ## Public safety
 
-Do not include secrets, API keys, internal hostnames, or private network details in any contribution — ever. Tools and contracts speak in role terms; vendor names live in connector bindings, never in identifiers. See [SECURITY.md](SECURITY.md) for vulnerability reporting.
+Do not include secrets, API keys, internal hostnames, or private network details in any contribution, ever. Tools and contracts speak in role terms; vendor names live in connector bindings, never in identifiers. See [SECURITY.md](SECURITY.md) for vulnerability reporting.
 
 ## Commit messages
 
