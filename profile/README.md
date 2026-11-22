@@ -50,6 +50,7 @@ Products take ordinary botanical words, named for what they do; the full [naming
 | [aestivation](https://github.com/Vidoxlabs/aestivation) | Admission and review for agent work: plan validation, verdicts, the assembly gate. | JavaScript | 0 |
 | [bloom](https://github.com/Vidoxlabs/bloom) | The agent workspace: create a head agent, share a desktop, follow the work from brief to artifact. | JavaScript | 0 |
 | [capillary](https://github.com/Vidoxlabs/capillary) | Context retrieval and relations for agent workspaces: provenance-honest sources, bounded packets. | JavaScript | 0 |
+| [docs](https://github.com/Vidoxlabs/docs) | Documentation for the Vidoxlabs agent family: written here, synced from every public repository. | JavaScript | 0 |
 | [drosera](https://github.com/Vidoxlabs/drosera) | Tooling for agents: tool faces, skills, hooks, cookbooks. | JavaScript | 0 |
 | [myosotis](https://github.com/Vidoxlabs/myosotis) | Governed memory for agents: consent to keep, structural forget. | JavaScript | 0 |
 | [seed](https://github.com/Vidoxlabs/seed) | Harness foundation for agent workspaces: run contracts, tool identity, provider adapters. | JavaScript | 0 |
