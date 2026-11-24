@@ -122,7 +122,7 @@ The catalog below is refreshed automatically. The banners and short descriptions
 | [myosotis](https://github.com/Vidoxlabs/myosotis) | Governed memory for agents: consent to keep, structural forget. | JavaScript | 0 |
 | [seed](https://github.com/Vidoxlabs/seed) | Harness foundation for agent workspaces: run contracts, tool identity, provider adapters. | JavaScript | 0 |
 | [trellis](https://github.com/Vidoxlabs/trellis) | Multi-point testing for the agent family: shape, behavior, consistency, operational. | JavaScript | 0 |
-| [videsign](https://github.com/Vidoxlabs/videsign) | videsign is Vidoxlabs’ JavaScript-based design system and component library, providing reusable UI primitives, visual language standards, preview components, and an MCP server to support consistent theming and interface development across the sovereign AI agent ecosystem. | JavaScript | 0 |
+| [videsign](https://github.com/Vidoxlabs/videsign) | Component library for stylistic consistency and modular placement across developments. | JavaScript | 0 |
 <!-- END REPO TABLE -->
 
 _Auto-synced weekly (see the [sync workflow](https://github.com/Vidoxlabs/.github/blob/main/.github/workflows/sync-repo-table.yml))._
